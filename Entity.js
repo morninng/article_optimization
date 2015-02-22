@@ -1,16 +1,16 @@
 
-ContactManager.module("Entities", function(Entities, ContactManager,
+ArticleManager.module("Entities", function(Entities, ArticleManager,
 Backbone, Marionette, $, _){
-  Entities.Contact = Backbone.Model.extend({});
-  Entities.ContactCollection = Backbone.Collection.extend({
-    model: Entities.Contact,
+  Entities.Article = Backbone.Model.extend({});
+  Entities.ArticleCollection = Backbone.Collection.extend({
+    model: Entities.Article,
     comparator: "firstName"
   });
 
-  var contacts;
+  var articles;
 
-  var initializeContacts = function(){
-    contacts = new Entities.ContactCollection([
+  var initializeArticles = function(){
+    articles = new Entities.ArticleCollection([
     { id: 1, firstName: "Alice", lastName: "Arten", phoneNumber: "555-0184" },
     { id: 2, firstName: "Bob", lastName: "Brigham", phoneNumber: "555-0163" },
     { id: 3, firstName: "Charlie", lastName: "Campbell", phoneNumber: "555-0129" }
@@ -19,18 +19,18 @@ Backbone, Marionette, $, _){
 
 
 var API = {
-  getContactEntities: function(){
-    if(contacts === undefined){
-      initializeContacts(); 
+  getArticleEntities: function(){
+    if(articles === undefined){
+      initializeArticles(); 
     }
-    return contacts;
+    return articles;
    }
 };
 
 
 
-  ContactManager.reqres.setHandler("contact:entities", function(){
-    return API.getContactEntities();
+  ArticleManager.reqres.setHandler("article:entities", function(){
+    return API.getArticleEntities();
   });
 
 

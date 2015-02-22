@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
     	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Marionette Contact Manager</title>
+	<title>Marionette Article Manager</title>
 	<link href="./assets/css/bootstrap.min.css" rel="stylesheet">
  </head>
  <body>
@@ -13,7 +13,7 @@
  <div class="navbar navbar-inverse navbar-fixed-top">
   <div class="navbar-inner">
    <div class="container">
-    <span class="brand">Contact manager</span>
+    <span class="brand">Article manager</span>
    </div>
   </div>
  </div>
@@ -26,7 +26,7 @@
  <div id="main-region"></div>
 <br><br>
 
-	<script type="text/template" id="contact-list">
+	<script type="text/template" id="article-list">
 
 	  <thead>
 	  <tr><th>First Name</th><th>Last Name</th></tr>
@@ -37,12 +37,12 @@
 	</script>
 
 
-  <script type="text/template" id="contact-list-item">
+  <script type="text/template" id="article-list-item">
 
     <td><%- firstName %></td><td><%- lastName %></td>
 	<td>
 
-		<a href="#contacts/<%- id %>" class="btn btn-small js-show">
+		<a href="#articles/<%- id %>" class="btn btn-small js-show">
 			<i class="icon-eye-open"></i>
 			Show
 		</a>
@@ -55,7 +55,7 @@
 
   </script>
 
-	<script type="text/template" id="contact-view">
+	<script type="text/template" id="article-view">
 		<h1><%- firstName %> <%- lastName %></h1>
 		<p><strong>Phone number:</strong> <%- phoneNumber %></p>
 	</script>
@@ -75,18 +75,18 @@
 	<script src="./assets/js/vendor/bootstrap.min.js"></script>
 	<!-- my own application js -->
 
-	<script src="./practice5_app.js"></script>
+	<script src="./app.js"></script>
 	<script src="./Entity.js"></script>
 
 
-	<script src="./contact_app.js"></script>
-	<script src="./contact_list_view.js"></script>
-	<script src="./contact_list_controller.js"></script>
-	<script src="./contact_view.js"></script>
-	<script src="./contact_controller.js"></script>
+	<script src="./article_app.js"></script>
+	<script src="./article_list_view.js"></script>
+	<script src="./article_list_controller.js"></script>
+	<script src="./article_view.js"></script>
+	<script src="./article_controller.js"></script>
 
 	<script>
-		ContactManager.start();
+		ArticleManager.start();
 	</script>
 	
 </body>

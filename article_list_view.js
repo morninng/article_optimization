@@ -1,9 +1,9 @@
-ContactManager.module("ContactsApp.List", function(List, ContactManager,
+ArticleManager.module("ArticleApp.List", function(List, ArticleManager,
 Backbone, Marionette, $, _){
 
-	List.Contact = Marionette.ItemView.extend({
+	List.Article = Marionette.ItemView.extend({
 		tagName: "tr",
-		template: "#contact-list-item",
+		template: "#article-list-item",
 
 		events: {
 			"click": "highlightName",
@@ -17,24 +17,24 @@ Backbone, Marionette, $, _){
 		deleteClicked: function(e){
 			e.stopPropagation();
 			alert("delete button was clicked");
-			this.trigger("contact:delete", this.model);
+			this.trigger("article:delete", this.model);
 			// this.model.collection.remove(this.model);
 		},
 		showClicked: function(e){
 			e.preventDefault();
 			e.stopPropagation();
-			this.trigger("contact:show", this.model);
+			this.trigger("article:show", this.model);
 		}
 	});
 
-	List.Contacts = Marionette.CompositeView.extend({
+	List.Articles = Marionette.CompositeView.extend({
 		tagName: "table",
 		className: "table table-hover",
-		template: "#contact-list",
-		childView: List.Contact,
+		template: "#article-list",
+		childView: List.Article,
 		childViewContainer: "tbody",
 
-		onChildviewContactDelete: function(){
+		onChildviewArticleDelete: function(){
 			this.$el.fadeOut(1000, function(){
 				$(this).fadeIn(1000);
 			});
