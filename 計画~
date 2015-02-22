@@ -1,0 +1,31 @@
+
+アプリｹｰｼｮﾝ
+　CXenseTestApp
+　
+　Module header
+　 navigation: profile
+　             
+　
+　Module:ログイン
+　 -> facebook login
+　 -> 
+　
+　
+　Module:Article
+　  -> Show-Article
+　  -> Article list
+　  
+　  
+　Module: Advertisement
+
+ Module: recommendation 
+   show segment
+   
+
+
+Region
+ Header
+ 左枠　
+ 　→ログイン
+
+
